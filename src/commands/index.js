@@ -2,7 +2,7 @@ const useThisChannelCommand = require('./use_this_channel')
 
 exports.handle = async (client, message) => {
 
-    let args = message.content.split(" ")
+    let args = message.content.replace(/\s+/g, " ").split(" ")
 
     if(!args || args.length < 1 || args[0] !== `<@${client.user.id}>`)
         return
@@ -13,7 +13,7 @@ exports.handle = async (client, message) => {
 
     switch(args[1]) {
 
-        case "use": return await useThisChannelCommand(client, message)
+        case "use": return await useThisChannelCommand(client, message, args)
         
         default: {
             return unknownCommand(client, message)
@@ -21,6 +21,6 @@ exports.handle = async (client, message) => {
     }
 }
 
-const unknownCommand = (client, message) => {
-    return message.channel.send(`<@${message.author.id}> I didn't quite get that. Use <@${client.user.id}> help to see available commands.`)
+exports.unknownCommand = (client, message) => {
+    return message.channel.send(`<@${message.author.id}> I didn't quite get that. Use <@${client.user.id}> help to see available commands`)
 }
