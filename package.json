@@ -1,0 +1,25 @@
+{
+  "name": "nunu",
+  "version": "1.0.0",
+  "description": "A discord bot for notifying users when a member has performed exceptionally bad in a game of League of Legends.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sindreslungaard/nunu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sindreslungaard/nunu/issues"
+  },
+  "homepage": "https://github.com/sindreslungaard/nunu#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.0.0",
+    "lowdb": "^1.0.0"
+  }
+}
