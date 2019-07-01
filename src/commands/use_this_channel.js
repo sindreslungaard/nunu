@@ -3,7 +3,7 @@ const commands = require('./index')
 
 module.exports = async (client, message, args) => {
 
-    if(args.length < 4) {
+    if(args.length < 4 || args[2] !== "this" || args[3] !== "channel") {
         return commands.unknownCommand(client, message)
     }
 

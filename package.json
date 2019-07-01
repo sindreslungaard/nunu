@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/sindreslungaard/nunu#readme",
   "dependencies": {
+    "axios": "^0.19.0",
+    "bottleneck": "^2.19.1",
     "discord.js": "^11.5.1",
     "dotenv": "^8.0.0",
     "lowdb": "^1.0.0"

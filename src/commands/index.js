@@ -1,4 +1,5 @@
 const useThisChannelCommand = require('./use_this_channel')
+const trackUserCommand = require('./track_user')
 
 exports.handle = async (client, message) => {
 
@@ -14,6 +15,7 @@ exports.handle = async (client, message) => {
     switch(args[1]) {
 
         case "use": return await useThisChannelCommand(client, message, args)
+        case "track": return await trackUserCommand(client, message, args)
         
         default: {
             return unknownCommand(client, message)
