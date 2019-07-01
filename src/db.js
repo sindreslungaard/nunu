@@ -8,7 +8,7 @@ exports.connect = () => {
     const adapter = new FileSync(process.env.DB_PATH || 'db.json')
     database = low(adapter)
 
-    database.defaults({ users: [], guild_settings: {} }).write()
+    database.defaults({ tracked_users: [], guild_settings: {} }).write()
 
 }
 

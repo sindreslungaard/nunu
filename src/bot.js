@@ -7,14 +7,11 @@ exports.connect = () => {
 
     client.on("ready", () => {
 
-        console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`)
-        client.user.setActivity(`Serving ${client.guilds.size} servers`)
-
-        console.log(client.user)
-
     })
 
     client.on("message", async message => {
+
+        console.log(message.content)
 
         try {
 
