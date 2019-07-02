@@ -1,6 +1,8 @@
 const Discord = require('discord.js')
 const commands = require('./commands')
 
+exports.client = null
+
 exports.connect = () => {
 
     const client = new Discord.Client()
@@ -10,8 +12,6 @@ exports.connect = () => {
     })
 
     client.on("message", async message => {
-
-        console.log(message.content)
 
         try {
 
@@ -27,5 +27,7 @@ exports.connect = () => {
     })
 
     client.login(process.env.DISCORD_SECRET)
+
+    this.client = client
 
 }
