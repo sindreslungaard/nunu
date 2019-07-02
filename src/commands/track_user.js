@@ -29,11 +29,11 @@ module.exports = async (client, message, args) => {
 
     let userRes = await riot.getUserFromName(region, username)
 
-    if(userRes.status === 404) {
-        return message.channel.send(`The user \`username\` could not be find in region \`region\``)
+    if(userRes.response && userRes.response.status === 404) {
+        return message.channel.send(`The user \`${username}\` could not be found in region \`${region}\``)
     }
 
-    if(userRes.status !== 200) {
+    if(userRes.response && userRes.response.status !== 200) {
         return message.channel.send("An error occured whilst connecting to the Riot Games API. Could not find the user.")
     }
 
@@ -46,6 +46,7 @@ module.exports = async (client, message, args) => {
     if(!existingUser) {
         db.conn().get('tracked_users').push({
             account_id: userRes.data.accountId,
+            region,
             username: userRes.data.name,
             guilds: [
                 message.guild.id

@@ -9,7 +9,7 @@ exports.handle = async (client, message) => {
         return
     
     if(args.length < 2) {
-        return unknownCommand(client, message)
+        return this.unknownCommand(client, message)
     }
 
     switch(args[1]) {
@@ -18,7 +18,7 @@ exports.handle = async (client, message) => {
         case "track": return await trackUserCommand(client, message, args)
         
         default: {
-            return unknownCommand(client, message)
+            return this.unknownCommand(client, message)
         }
     }
 }
