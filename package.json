@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/sindreslungaard/nunu#readme",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bottleneck": "^2.19.1",
     "discord.js": "^11.5.1",
     "dotenv": "^8.0.0",
